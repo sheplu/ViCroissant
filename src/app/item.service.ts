@@ -3,25 +3,24 @@ import { Headers, Http, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { User } from './user';
+import { Item } from './item';
 
 @Injectable()
-export class UserService {
+export class ItemService {
 
-  private usersUrl = 'api/users';
+  private itemsUrl = 'api/items';
 
   constructor(private http: Http) { }
 
-  getUsers(): Promise<Array<User>> {
+  getUsers(): Promise<Array<Item>> {
     return this.http
-      .get(this.usersUrl)
+      .get(this.itemsUrl)
       .toPromise()
       .then((response) => {
         console.log(response);
-        return response.json() as User[];
+        return response.json() as Item[];
       })
       .catch();
   }
-
 
 }

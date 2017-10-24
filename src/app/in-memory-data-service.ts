@@ -13,10 +13,18 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 18, name: 'Dr IQ' },
             { id: 19, name: 'Magma' },
             { id: 20, name: 'Tornado' }
-      ];
+        ];
         const teams = [];
+        const history = [];
+        const stats = [];
+        const items = [
+            { id: 1, name: 'Croissant' },
+            { id: 2, name: 'Pain au chocolat' },
+            { id: 3, name: 'Pain au raisin' },
+            { id: 4, name: 'Chausson' }
+        ];
 
-        return {users, teams}
+        return {users, teams, history, stats, items}
     }
 
 }

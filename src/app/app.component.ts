@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 
+
 import { User } from './user';
 import { UserService } from './user.service';
 
@@ -9,16 +10,14 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  users: User[] = [];
+  title = 'ViCroissant';
 
   constructor(
     private userService: UserService) {
- }
+      
+  }
 
-ngOnInit(): void {
-  this.userService.getUsers()
-    .then(users => this.users = users);
-}
-
+  ngOnInit(): void {
+    
+  }
 }
