@@ -11,12 +11,16 @@ import { ItemService } from '../item.service';
 export class ItemsComponent implements OnInit {
 
   items: Item[];
-  
+  color: string = "white"; 
+  order: {item: Item, total: number}[];
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
     this.itemService.getUsers()
     .then(items => this.items = items);
+    for(let item in this.items) {
+      //this.order.push({item: item, total:0})
+    }
   }
 
 }

@@ -3,6 +3,9 @@
 </p>
 <div *ngFor="let item of items" class="col-1-4">
   <div class="module hero">
-    <h4>{{item.id}} - {{ item.name }}</h4>
+    <p [appAwesome] = "color">
+      {{item.id}} - {{ item | concat:'PAUSE' }}- {{ item.price }} 
+      <input  /> 
+    </p>
   </div>
 </div>

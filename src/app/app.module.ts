@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-
+import { FormsModule } from "@angular/forms";
 import { ChartModule } from "primeng/primeng";
 import 'chart.js/dist/Chart.min.js';
 
@@ -20,6 +20,8 @@ import { StatsComponent } from './stats/stats.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HistoryComponent } from './history/history.component';
 import { ItemsComponent } from './items/items.component';
+import { AwesomeDirective } from './awesome.directive';
+import { ConcatPipe } from './concat.pipe';
 
 const appRoutes : Routes = [
   {
@@ -66,11 +68,14 @@ const appRoutes : Routes = [
     StatsComponent,
     CalendarComponent,
     HistoryComponent,
-    ItemsComponent
+    ItemsComponent,
+    AwesomeDirective,
+    ConcatPipe
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     InMemoryWebApiModule.forRoot(InMemoryDataService, {delay: 600}),
     ChartModule
